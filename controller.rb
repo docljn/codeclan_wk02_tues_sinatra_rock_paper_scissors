@@ -19,13 +19,16 @@ require_relative('models/rps_game.rb')
 # end
 
 get("/rock") do
-  "Hello World"
+  p "Rock"
+  erb(:result)
 end
 
+get ("/paper") do
+  p "Paper"
+  erb(:result)
+end
 
-
-
-
-
-binding.pry
-nil
+get ("/scissors") do
+  p "Scissors"
+  erb(:result)
+end

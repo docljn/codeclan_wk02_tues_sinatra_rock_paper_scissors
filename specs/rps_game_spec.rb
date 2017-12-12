@@ -10,14 +10,6 @@ class GameTest < MiniTest::Test
   def setup()
     @game = Game.new()
 
-    @computer_weapon_list = ['rock', 'paper', 'scissors']
-  end
-
-  def test_computer_chooses_weapon()
-    computer_choice = @computer_weapon_list[0]
-
-
-
   end
 
   def test_paper_beats_rock()
@@ -34,6 +26,9 @@ class GameTest < MiniTest::Test
 
   def test_two_the_same_is_a_draw()
   end
+
+  binding.pry
+  nil
 
 
 # TEST FUNCTION NAMING
