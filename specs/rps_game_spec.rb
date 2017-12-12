@@ -8,24 +8,32 @@ require_relative("../models/rps_game.rb")
 class GameTest < MiniTest::Test
 
   def setup()
-    @game = Game.new()
+    @game_rock = Game.new('rock')
+    @game_paper = Game.new('paper')
+    @game_scissors = Game.new('scissors')
 
+  end
+
+  def test_play_selects_a_weapon()
+    result = @game_rock.play()
+    assert_equal(result, "draw")
   end
 
   def test_paper_beats_rock()
+    skip
     computer_choice = 'rock'
-    result = @game.play('paper')
-    assert_equal(result, "rock beats paper")
+    result = @game_paper.play()
+    assert_equal(result, "paper beats rock")
   end
 
   def test_scissors_beats_paper()
+    skip
   end
 
   def test_rock_beats_scissors()
+    skip
   end
 
-  def test_two_the_same_is_a_draw()
-  end
 
   binding.pry
   nil
