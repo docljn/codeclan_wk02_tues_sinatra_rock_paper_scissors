@@ -18,17 +18,14 @@ require_relative('models/rps_game.rb')
 # the fact that we include p 'string' means nothing to Sinatra
 # end
 
-get("/rock") do
-  p "Rock"
+get("/play/:weapon") do
+  weapon = params[:weapon].to_s
+  game = Game.new(weapon)
+  game_result = game.play()
+  @result = "You played #{weapon} and I played #{game.computer_choice}.  You #{game_result}!"
   erb(:result)
 end
 
-get ("/paper") do
-  p "Paper"
-  erb(:result)
-end
-
-get ("/scissors") do
-  p "Scissors"
-  erb(:result)
-end
+get("/welcome") do
+  erb(:welcome)
+end#

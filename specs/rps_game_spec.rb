@@ -15,8 +15,14 @@ class GameTest < MiniTest::Test
   end
 
   def test_play_selects_a_weapon()
+    @game_rock.play()
+    @game_paper.play()
+    @game_scissors.play()
     result = @game_rock.play()
+    binding.pry
+    nil
     assert_equal(result, "draw")
+
   end
 
   def test_paper_beats_rock()
@@ -34,9 +40,6 @@ class GameTest < MiniTest::Test
     skip
   end
 
-
-  binding.pry
-  nil
 
 
 # TEST FUNCTION NAMING
